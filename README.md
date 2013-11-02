@@ -8,6 +8,9 @@ stuff and https://github.com/embolalia/willie/ for Willie
 Configuration
 ===============
 Add a section named [pysphere] in your config and add:
+
 server = yourserver
+
 login = yourlogin
+
 password = yoursupersecretpassword

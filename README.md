@@ -21,10 +21,10 @@ password = yoursupersecretpassword
 Commands
 ===============
 .vmlist
-Lists vms
+: Lists vms
 
 .vmpoweron
-power on a  vm
+: power on vm
 
 .vmpoweroff
-power off a vm
+: power off vm

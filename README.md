@@ -14,3 +14,12 @@ server = yourserver
 login = yourlogin
 
 password = yoursupersecretpassword
+
+Commands
+===============
+.vmlist
+
+.vmpoweron
+
+.vmpoweroff
+

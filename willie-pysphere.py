@@ -20,6 +20,7 @@ def _connect_server(bot):
         server = VIServer()
         server.connect(bot.config.pysphere.server, bot.config.pysphere.login, bot.config.pysphere.password)        
     except Exception, e:
+        bot.say("No connection to the server")
         return False
     return server
 
@@ -28,7 +29,11 @@ def vmlist(bot, trigger):
     config = _check_config(bot)
     if config == False:
         return
+
     server = _connect_server(bot)
+    if server == False:
+        return
+
     vmlist = server.get_registered_vms()
 
     if len(vmlist) == 0:
@@ -46,6 +51,8 @@ def vmpoweron(bot, trigger):
     if config == False:
         return
     server = _connect_server(bot)
+    if server == False:
+        return
 
     try:
         vm = server.get_vm_by_path(trigger.group(2))
@@ -61,7 +68,10 @@ def vmpoweroff(bot, trigger):
     config = _check_config(bot)
     if config == False:
         return
+
     server = _connect_server(bot)
+    if server == False:
+        return
 
     try:
         vm = server.get_vm_by_path(trigger.group(2))
